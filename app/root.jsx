@@ -9,6 +9,7 @@ import {
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {Layout} from './components/Layout';
+import {Seo} from '@shopify/hydrogen';
 
 export const links = () => {
   return [
@@ -40,6 +41,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <Seo />
         <Meta />
         <Links />
       </head>
