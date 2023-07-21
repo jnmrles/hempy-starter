@@ -37,7 +37,7 @@ export default function Collection() {
   console.log(collection);
   return (
     <>
-      <header className="grid w-full gap-8 py-8 justify-items-start">
+      <header className="grid w-full gap-8 py-8 justify-items-center">
         <h1 className="text-4xl whitespace-pre-wrap font-bold inline-block">
           {collection.title}
         </h1>

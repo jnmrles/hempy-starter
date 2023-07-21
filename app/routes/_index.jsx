@@ -1,5 +1,6 @@
 import {useLoaderData, Link} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
+import {motion} from 'framer-motion';
 
 export function meta() {
   return [
