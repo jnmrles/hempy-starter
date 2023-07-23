@@ -25,8 +25,12 @@ export async function loader({params, context, request}) {
     throw new Response(null, {status: 404});
   }
 
+  // optionally set a default variant so you always have an "orderable" product selected
+  const selectedVariant =
+    product.selectedVariant ?? product?.variants?.nodes[0];
   return json({
     product,
+    selectedVariant,
   });
 }
 
@@ -40,8 +44,7 @@ function PrintJson({data}) {
 }
 
 export default function ProductHandle() {
-  const {product} = useLoaderData();
-
+  const {product, selectedVariant} = useLoaderData();
   return (
     <section className="w-full gap-4 md:gap-8 grid px-6 md:px-8 lg:px-12">
       <div className="grid items-start gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
@@ -59,7 +62,10 @@ export default function ProductHandle() {
               {product.vendor}
             </span>
           </div>
-          <ProductOptions options={product.options} />
+          <ProductOptions
+            options={product.options}
+            selectedVariant={selectedVariant}
+          />
           <div
             className="prose border-t border-gray-200 pt-6 text-black text-md"
             dangerouslySetInnerHTML={{__html: product.descriptionHtml}}
