@@ -1,13 +1,15 @@
 import {useLoaderData} from '@remix-run/react';
 import {json} from '@shopify/remix-oxygen';
-import {MediaFile} from '@shopify/hydrogen-react';
+import {MediaFile, Money, ShopPayButton} from '@shopify/hydrogen-react';
 import ProductOptions from '~/components/ProductOptions';
+import {useMatches, useFetcher} from '@remix-run/react';
 // loader function
 // this retrieves the URL handle variable from params that are passed through it and returns sample JSON that you can use in your JSX component
 export async function loader({params, context, request}) {
   const {handle} = params;
   const searchParams = new URL(request.url).searchParams;
   const selectedOptions = [];
+  const storeDomain = context.storefront.getShopifyDomain();
 
   // set selected options from the query string
   searchParams.forEach((value, name) => {
@@ -31,6 +33,7 @@ export async function loader({params, context, request}) {
   return json({
     product,
     selectedVariant,
+    storeDomain,
   });
 }
 
@@ -44,7 +47,8 @@ function PrintJson({data}) {
 }
 
 export default function ProductHandle() {
-  const {product, selectedVariant} = useLoaderData();
+  const {product, selectedVariant, storeDomain} = useLoaderData();
+  const orderable = selectedVariant?.availableForSale || false;
   return (
     <section className="w-full gap-4 md:gap-8 grid px-6 md:px-8 lg:px-12">
       <div className="grid items-start gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
@@ -66,6 +70,21 @@ export default function ProductHandle() {
             options={product.options}
             selectedVariant={selectedVariant}
           />
+          <Money
+            withoutTrailingZeros
+            data={selectedVariant.price}
+            className="text-xl font-semibold mb-2"
+          />
+          {orderable && (
+            <div className="space-y-2">
+              <ShopPayButton
+                storeDomain={storeDomain}
+                variantIds={[selectedVariant?.id]}
+                width={'400px'}
+              />
+              <ProductForm variantId={selectedVariant?.id} />
+            </div>
+          )}
           <div
             className="prose border-t border-gray-200 pt-6 text-black text-md"
             dangerouslySetInnerHTML={{__html: product.descriptionHtml}}
@@ -135,6 +154,29 @@ function ProductGallery({media}) {
         );
       })}
     </div>
+  );
+}
+
+function ProductForm({variantId}) {
+  const [root] = useMatches();
+  const selectedLocale = root?.data?.selectedLocale;
+  const fetcher = useFetcher();
+
+  const lines = [{merchandiseId: variantId, quantity: 1}];
+
+  return (
+    <fetcher.Form action="/cart" method="post">
+      <input type="hidden" name="cartAction" value={'ADD_TO_CART'} />
+      <input
+        type="hidden"
+        name="countryCode"
+        value={selectedLocale?.country ?? 'US'}
+      />
+      <input type="hidden" name="lines" value={JSON.stringify(lines)} />
+      <button className="bg-black text-white px-6 py-3 w-full rounded-md text-center font-medium max-w-[400px]">
+        Add to Bag
+      </button>
+    </fetcher.Form>
   );
 }
 
