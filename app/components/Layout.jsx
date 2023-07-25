@@ -3,6 +3,7 @@ import {Suspense} from 'react';
 import {Await} from '@remix-run/react';
 import {useMatches} from '@remix-run/react';
 import {CartLineItems, CartActions, CartSummary} from '~/components/Cart';
+import Nav from './Nav';
 
 function CartHeader({cart, openDrawer}) {
   return (
@@ -42,23 +43,21 @@ export function Layout({children, title}) {
   const [root] = useMatches();
   const cart = root.data?.cart;
   return (
-    <div className="flex flex-col min-h-screen antialiased bg-neutral-50">
-      <header
+    <div className="flex flex-col min-h-screen antialiased bg-black">
+      <Nav />
+      {/* <header
         role="banner"
         className={`flex items-center h-16 p-6 md:p-8 lg:p-12 sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 antialiased transition shadow-sm`}
       >
         <div className="flex gap-12 w-full items-center">
+          <Nav />
           <a className="font-bold" href="/">
             {title}
           </a>
           <CartHeader cart={cart} openDrawer={openDrawer} />
         </div>
-      </header>
-      <main
-        role="main"
-        id="mainContent"
-        className="flex-grow p-6 md:p-8 lg:p-12"
-      >
+      </header> */}
+      <main role="main" id="mainContent" className="flex-grow  md:p-8 lg:p-0">
         {children}
       </main>
       <Drawer open={isOpen} onClose={closeDrawer}>
