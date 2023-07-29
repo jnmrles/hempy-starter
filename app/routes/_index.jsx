@@ -1,6 +1,8 @@
 import {useLoaderData, Link} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
 import {motion} from 'framer-motion';
+import FeaturedProducts from '~/components/FeaturedProducts';
+import Features from '~/components/Features';
 import Hero from '~/components/Hero';
 
 export function meta() {
@@ -24,37 +26,40 @@ export default function Index() {
     <>
       <Hero />
 
-      <div className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-        <div className="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-          <svg
-            className="w-8 h-8 text-purple-600"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75H15.25C16.3546 4.75 17.25 5.64543 17.25 6.75V19.25L12 14.75L6.75 19.25V6.75Z"
-            ></path>
-          </svg>
-          <div className="space-y-2">
-            <p className="text-slate-800">
-              Learn how to make a glowing gradient background!
+      <FeaturedProducts />
+
+      <section className="bg-white dark:bg-gray-900">
+        <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+          <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              We didn't reinvent the wheel
+            </h2>
+            <p className="mb-4">
+              We are strategists, designers and developers. Innovators and
+              problem solvers. Small enough to be simple and quick, but big
+              enough to deliver the scope you want at the pace you need. Small
+              enough to be simple and quick, but big enough to deliver the scope
+              you want at the pace you need.
             </p>
-            <a
-              href="https://braydoncoyer.dev/blog/tailwind-gradients-how-to-make-a-glowing-gradient-background"
-              className="block text-indigo-400"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Read Article →
-            </a>
+            <p>
+              We are strategists, designers and developers. Innovators and
+              problem solvers. Small enough to be simple and quick.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 mt-8">
+            <img
+              className="w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+              alt="office content 1"
+            />
+            <img
+              className="mt-4 w-full lg:mt-10 rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+              alt="office content 2"
+            />
           </div>
         </div>
-      </div>
+      </section>
 
       <section className="w-full gap-4 p-6 text-[#22d3ee]  ">
         <h2 className="whitespace-pre-wrap max-w-prose font-bold text-load">
@@ -88,6 +93,7 @@ export default function Index() {
           })}
         </div>
       </section>
+      <Features />
     </>
   );
 }
