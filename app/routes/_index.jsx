@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import FeaturedProducts from '~/components/FeaturedProducts';
 import Features from '~/components/Features';
 import Hero from '~/components/Hero';
+import {NewHero} from '~/components/NewHero';
 
 export function meta() {
   return [

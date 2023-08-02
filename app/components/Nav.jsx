@@ -56,17 +56,17 @@ export default function NavBar() {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-[#45a29e] hover:text-blue-600">
+              <li className="text-[#b7baba] hover:text-[#45a29e]">
                 <a href="javascript:void(0)">Home</a>
               </li>
-              <li className="text-[#45a29e] hover:text-blue-600">
+              <li className="text-[#b7baba] hover:text-[#45a29e]">
                 <a href="javascript:void(0)">Blog</a>
               </li>
-              <li className="text-[#45a29e]hover:text-blue-600">
-                <a href="javascript:void(0)">About US</a>
+              <li className="text-[#b7baba] hover:text-[#45a29e]">
+                <a href="javascript:void(0)">About</a>
               </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <a href="javascript:void(0)">Contact US</a>
+              <li className="text-[#b7baba] hover:text-[#45a29e]">
+                <a href="javascript:void(0)">Contact</a>
               </li>
             </ul>
           </div>
