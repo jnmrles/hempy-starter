@@ -29,18 +29,18 @@ export default function Index() {
 
       <FeaturedProducts />
 
-      <section className="bg-white dark:bg-gray-900">
+      <section className=" dark:bg-gray-900 mt-4 h-[50vh]">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-          <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              We didn't reinvent the wheel
+          <div className="font-light text-gray-300 sm:text-lg dark:text-gray-400">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white dark:text-white">
+              One Big <span className="text-[#22d3ee]">HEMPY</span> family
             </h2>
             <p className="mb-4">
-              We are strategists, designers and developers. Innovators and
-              problem solvers. Small enough to be simple and quick, but big
-              enough to deliver the scope you want at the pace you need. Small
-              enough to be simple and quick, but big enough to deliver the scope
-              you want at the pace you need.
+              Cannabis Product description Cannabis Product description Cannabis
+              Product description Cannabis Product description Cannabis Product
+              description Cannabis Product description Cannabis Product
+              description Cannabis Product description Cannabis Product
+              description
             </p>
             <p>
               We are strategists, designers and developers. Innovators and
@@ -62,8 +62,8 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="w-full gap-4 p-6 text-[#22d3ee]  ">
-        <h2 className="whitespace-pre-wrap max-w-prose font-bold text-load">
+      <section className="w-full gap-4 p-6   ">
+        <h2 className="whitespace-pre-wrap max-w-prose font-bold text-load text-white flex justify-center py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl mb-3 text-white ">
           Collections
         </h2>
         <div className="grid-flow-row grid gap-2 gap-y-6 md:gap-4 lg:gap-6 grid-cols-1 sm:grid-cols-3">

@@ -1,14 +1,14 @@
 export default function Features() {
   return (
     <>
-      <div className="p-8">
+      <div className="p-8 h-[50-vh]">
         <div className="flex felx-col items-center justify-center">
           <span className="rounded-full bg-indigo-500 px-2 py-1 text-white uppercase text-sm">
             Insight
           </span>
         </div>
-        <h1 className="text-4xl font-medium text-gray-700 text-center mt-6">
-          Full-Funnel Social Analytics
+        <h1 className="text-4xl font-medium text-white text-center mt-6">
+          Full-Funnel Hempy Products
         </h1>
         <p className="text-center mt-6 text-lg font-light text-gray-500">
           The time is now for it to be okay to be great. For being a bright
@@ -36,8 +36,9 @@ export default function Features() {
             Social conversations
           </h2>
           <p className="font-light text-sm text-gray-500 mb-3">
-            We get insulted by others, lose trust for those others. We get back
-            stabbed by friends. It becomes harder for us to give others a hand.
+            Hempy products are the best cbd products available on the market
+            located in the hear of iowa.Hempy products are the best cbd products
+            available on the market located in the hear of iowa.
           </p>
           <a
             className="text-indigo-500 flex items-center hover:text-indigo-600"
@@ -78,8 +79,9 @@ export default function Features() {
             Social conversations
           </h2>
           <p className="font-light text-sm text-gray-500 mb-3">
-            We get insulted by others, lose trust for those others. We get back
-            stabbed by friends. It becomes harder for us to give others a hand.
+            Hempy products are the best cbd products available on the market
+            located in the hear of iowa.Hempy products are the best cbd products
+            available on the market located in the hear of iowa.
           </p>
           <a
             className="text-green-500 flex items-center hover:text-green-600"
@@ -119,8 +121,9 @@ export default function Features() {
             Social conversations
           </h2>
           <p className="font-light text-sm text-gray-500 mb-3">
-            We get insulted by others, lose trust for those others. We get back
-            stabbed by friends. It becomes harder for us to give others a hand.
+            Hempy products are the best cbd products available on the market
+            located in the hear of iowa.Hempy products are the best cbd products
+            available on the market located in the hear of iowa.
           </p>
           <a
             className="text-red-500 flex items-center hover:text-red-600"

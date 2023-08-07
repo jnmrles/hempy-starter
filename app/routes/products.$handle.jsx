@@ -59,7 +59,7 @@ export default function ProductHandle() {
         </div>
         <div className="md:sticky md:mx-auto max-w-xl md:max-w-[24rem] grid gap-8 p-0 md:p-6 md:px-0 top-[6rem] lg:top-[8rem] xl:top-[10rem]">
           <div className="grid gap-2">
-            <h1 className="text-4xl font-bold leading-10 whitespace-normal">
+            <h1 className="  text-white text-4xl font-bold leading-10 whitespace-normal">
               {product.title}
             </h1>
             <span className="max-w-prose whitespace-pre-wrap inherit text-copy opacity-50 font-medium">
@@ -86,7 +86,7 @@ export default function ProductHandle() {
             </div>
           )}
           <div
-            className="prose border-t border-gray-200 pt-6 text-black text-md"
+            className="prose border-t border-gray-200 pt-6 text-white text-md"
             dangerouslySetInnerHTML={{__html: product.descriptionHtml}}
           />
           <div

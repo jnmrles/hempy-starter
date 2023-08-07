@@ -43,7 +43,7 @@ export function Layout({children, title}) {
   const [root] = useMatches();
   const cart = root.data?.cart;
   return (
-    <div className="flex flex-col min-h-screen antialiased backdrop-blur bg-black">
+    <div className="flex flex-col min-h-screen antialiased backdrop-blur bg-[#121212] ">
       <Nav />
       {/* <header
         role="banner"
